@@ -51,7 +51,7 @@ class RegisterController extends GetxController {
         if (response.statusCode == 201) {
           Get.back();
         } else {
-          Get.snackbar("Sorry", "Menambahkan Buku Gagal",
+          Get.snackbar("Sorry", "Menambahkan Akun Gagal",
               backgroundColor: Colors.orange);
         }
       }

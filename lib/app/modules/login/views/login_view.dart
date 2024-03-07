@@ -94,6 +94,7 @@ class LoginView extends GetView<LoginController> {
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 22,
+                                        fontFamily: 'livvic', fontWeight: FontWeight.bold
                                       ),
                                     ),
                                   ),
