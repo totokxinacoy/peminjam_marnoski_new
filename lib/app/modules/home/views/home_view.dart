@@ -106,7 +106,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Positioned(
-              bottom: 250,
+              bottom: 220,
               left: 10,
               right: 10,
               child: Container(
@@ -131,7 +131,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Positioned(
-              bottom: 570,
+              bottom: 520,
               left: 10,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -139,7 +139,7 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Container(
                     child: Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(20),
                       child: Text(
                         'Riwayat Baca',
                         style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Livvic'),
@@ -149,10 +149,21 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
+            Positioned(
+              bottom: 20,
+              left: 0,
+              right: 0,
+                child: Center(
+                  child: Image(
+                    image: AssetImage('assets/marnoski.png'), // replace with your logo image path
+                    height: 200,
+                    width: 200,
+                  ),
+                ),
+              ),
           ],
         ),
       ),
     );
-
   }
 }
