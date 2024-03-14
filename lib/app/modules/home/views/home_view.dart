@@ -131,7 +131,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Positioned(
-              bottom: 520,
+              bottom: 530,
               left: 10,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -139,7 +139,7 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Container(
                     child: Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(10),
                       child: Text(
                         'Riwayat Baca',
                         style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Livvic'),
@@ -150,7 +150,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Positioned(
-              bottom: 20,
+              bottom: 50,
               left: 0,
               right: 0,
                 child: Center(
@@ -161,6 +161,99 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
               ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black, // Background color
+                  border: Border(
+                    top: BorderSide(width: 1.0, color: Colors.blue),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.home, color: Colors.grey),
+                          onPressed: () {
+                            // Action when home button is pressed
+                          },
+                        ),
+                        Text(
+                          'Home',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.home, color: Colors.grey),
+                          onPressed: () {
+                            // Action when home button is pressed
+                          },
+                        ),
+                        Text(
+                          'Home',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Positioned(
+                      top: 0, // Atur posisi ke atas sesuai kebutuhan
+                      left: 0,
+                      right: 0,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0), // Tambahkan padding horizontal sesuai kebutuhan
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.add, color: Colors.grey),
+                              onPressed: () {
+                                // Action when add button is pressed
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.search, color: Colors.grey),
+                          onPressed: () {
+                            // Action when search button is pressed
+                          },
+                        ),
+                        Text(
+                          'Search',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.person, color: Colors.grey),
+                          onPressed: () {
+                            // Action when profile button is pressed
+                          },
+                        ),
+                        Text(
+                          'Profile',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
