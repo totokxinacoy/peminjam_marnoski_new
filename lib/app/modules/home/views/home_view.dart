@@ -10,7 +10,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Colors.black,
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Stack(
           children: [
@@ -120,8 +120,7 @@ class HomeView extends GetView<HomeController> {
                         child: Container(
                           width: 180,
                           height: 320,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16.0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.0),
                             color: Colors.grey,
                           ),
                         ),
@@ -153,14 +152,14 @@ class HomeView extends GetView<HomeController> {
               bottom: 50,
               left: 0,
               right: 0,
-                child: Center(
-                  child: Image(
-                    image: AssetImage('assets/marnoski.png'), // replace with your logo image path
-                    height: 200,
-                    width: 200,
-                  ),
+              child: Center(
+                child: Image(
+                  image: AssetImage('assets/marnoski.png'), // replace with your logo image path
+                  height: 200,
+                  width: 200,
                 ),
               ),
+            ),
             Positioned(
               bottom: 0,
               left: 0,
@@ -178,13 +177,29 @@ class HomeView extends GetView<HomeController> {
                     Column(
                       children: [
                         IconButton(
-                          icon: Icon(Icons.home, color: Colors.grey),
+                          icon: Icon(Icons.history, color: Colors.grey),
                           onPressed: () {
+                            Navigator.pushNamed(context, '/home');
                             // Action when home button is pressed
                           },
                         ),
                         Text(
-                          'Home',
+                          'History',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.bookmark, color: Colors.grey),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/peminjaman');
+                            // Action when bookmark button is pressed
+                          },
+                        ),
+                        Text(
+                          'Peminjaman',
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
@@ -194,7 +209,8 @@ class HomeView extends GetView<HomeController> {
                         IconButton(
                           icon: Icon(Icons.home, color: Colors.grey),
                           onPressed: () {
-                            // Action when home button is pressed
+                            Navigator.pushNamed(context, '/home');
+                            // Action when add button is pressed
                           },
                         ),
                         Text(
@@ -202,25 +218,6 @@ class HomeView extends GetView<HomeController> {
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
-                    ),
-                    Positioned(
-                      top: 0, // Atur posisi ke atas sesuai kebutuhan
-                      left: 0,
-                      right: 0,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0), // Tambahkan padding horizontal sesuai kebutuhan
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            IconButton(
-                              icon: Icon(Icons.add, color: Colors.grey),
-                              onPressed: () {
-                                // Action when add button is pressed
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
                     ),
                     Column(
                       children: [
@@ -239,13 +236,14 @@ class HomeView extends GetView<HomeController> {
                     Column(
                       children: [
                         IconButton(
-                          icon: Icon(Icons.person, color: Colors.grey),
-                          onPressed: () {
+                          icon: Icon(Icons.exit_to_app, color: Colors.grey),
+                          onPressed: ()  {
+                            Navigator.pushNamed(context, '/login');
                             // Action when profile button is pressed
                           },
                         ),
                         Text(
-                          'Profile',
+                          'Logout',
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],

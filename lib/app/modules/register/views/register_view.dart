@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:peminjam_perpustakaan_kelas_c/app/modules/register/controllers/register_controller.dart';
+import 'package:peminjam_perpustakaan_kelas_c/app/routes/app_pages.dart';
 
 
 
@@ -201,6 +202,29 @@ class RegisterView extends GetView<RegisterController> {
                                   ),
                                 ),
                               )),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Sudah punya akun?",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Livvic'
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () => Get.toNamed(Routes.LOGIN),
+                                    child: Text(
+                                      "Login",
+                                      style: TextStyle(
+                                        color: Color(0xFF0066FF),
+                                        fontFamily: 'Livvic',
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ],
