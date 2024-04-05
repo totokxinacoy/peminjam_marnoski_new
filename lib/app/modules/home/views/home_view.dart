@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+import 'package:peminjam_perpustakaan_kelas_c/app/modules/book/views/book_view.dart';
 import 'package:peminjam_perpustakaan_kelas_c/app/routes/app_pages.dart';
-
+import '../../../data/provider/storage_provider.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -194,7 +195,7 @@ class HomeView extends GetView<HomeController> {
                         IconButton(
                           icon: Icon(Icons.bookmark, color: Colors.grey),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/peminjaman');
+                            Navigator.pushNamed(context, '/book');
                             // Action when bookmark button is pressed
                           },
                         ),
@@ -237,8 +238,8 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         IconButton(
                           icon: Icon(Icons.exit_to_app, color: Colors.grey),
-                          onPressed: ()  {
-                            Navigator.pushNamed(context, '/login');
+                          onPressed: () {
+                            logoutUser();
                             // Action when profile button is pressed
                           },
                         ),
@@ -257,4 +258,30 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
+}
+void logoutUser() {
+  // Show an alert dialog to confirm logout
+  Get.dialog(
+    AlertDialog(
+      title: Text('Logout'),
+      content: Text('Are you sure you want to logout?'),
+      actions: [
+        TextButton(
+          onPressed: () {
+            // Close the dialog without logging out
+            Get.back();
+          },
+          child: Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () {
+            // Clear user's session data and navigate to the login page
+            StorageProvider.clearAll();
+            Get.offNamed(Routes.LOGIN);
+          },
+          child: Text('Logout'),
+        ),
+      ],
+    ),
+  );
 }

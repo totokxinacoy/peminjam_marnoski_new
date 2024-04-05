@@ -136,7 +136,7 @@ class LoginView extends GetView<LoginController> {
               onTap: () {
               },
               child: Text(
-                'Copyright ©Tanto 2024',
+                'Copyright ©Tant 2024',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

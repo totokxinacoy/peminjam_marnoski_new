@@ -32,6 +32,7 @@ class RegisterController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+    Get.offAllNamed(Routes.REGISTER);
   }
 
   addAkun() async {
@@ -47,6 +48,7 @@ class RegisterController extends GetxController {
           "telp": int.parse(telpController.text.toString()),
           "alamat": alamatController.text.toString(),
           "password": passwordController.text.toString(),
+          "role": 'PEMINJAM',
         });
         if (response.statusCode == 201) {
           Get.back();
